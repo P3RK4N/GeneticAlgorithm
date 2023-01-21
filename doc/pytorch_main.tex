@@ -1,0 +1,42 @@
+\subsection{\LARGE Experimentation}
+\subsubsection{\textbf{\large Physics engine}}
+    We model every body as a collection of points. The points interact with each other through spring forces, two points interact if they are connected via a spring, there is no collision detection between points. This all means that there is no inherent difference between a bone or a muscle in a creature, they are both modeled as springs, while they can have different spring coefficients, we found that there are not that many stable configurations of those parameters. Each spring is also damped, damping level is controlled by a special parameter. As with the different spring coefficients we found random damping coefficients also unstable. The engine also features gravity force and ground force, both of those forces work on individual points. If one point is acted upon by the ground force the force is carried around through the whole body via spring forces.
+    Ground force is modeled by a linearly rising force that starts rising from 0 after the point crosses the "ground line". Ground force also has a damping coefficient.
+
+\subsubsection{\textbf{\large Neural networks}}
+    The points of the creature do not and cannot move themselves, we need a learnable controller for creatures to learn to walk.
+    While there exist many options, such as learning a program, a decision tree, logistic regression, etc. we decided to use neural networks because of their expresivity. So in this work one neural network controls one creature. It can be thought of as a brain of the creature, and every creature has a different brain. Important thing to point out is that the neural network is the one being optimized by the genetic algorithm. That is the body of the creature is not changing in any way during the evolution. The thing that is changing is its responses which are learned by the neural network. The neural network controls the body by contracting its muscles, the only distinction between muscles and bones is that muscles don't have a constant rest length and bones do. This rest length is controlled with the neural network. Several implementation details and tricks needed to get it to work with satisfactory performance.
+        
+        \begin{itemize}
+            \item \textbf{Neural Network Initialization}
+
+            Linear layers of the neural network are initialized with the He initialization described in Delving deep into rectifiers: "Surpassing human-level performance on ImageNet classification - He, K. et al. (2015), using a uniform distribution". Gain in set at \(\sqrt{2}\) because of the use of Relu (Rectified linear unit) as an activation function. 
+            
+
+            \item \textbf{Architecture}
+
+            The neural network has 2 hidden layers of size 32. This means that every network has 3 matrices worth of parameters and 3 vectors. Activation function used in the hidden layers is Relu. Output layer's activation function is the identity.    
+            
+
+            \item \textbf{Muscle clamping}
+
+            We did not use muscle clamping in our first experiments which our creatures quickly used to their advantage. Having one point on the ground and moving the muscle to infinity was a winning strategy. This is why we introduced muscle clamping, the muscle can extend or contract only by a certain amount.
+
+            \item \textbf{Relative coordinates}
+
+            While the first version worked, the creatures were learning really slowly, intuitively this is because as they move they have two options, their inputs do not look similar to the ones several steps before. The first option is to learn the new mapping, to convert the coordinates that are now shifted by several steps to actions. The second option is to learn to map the absolute coordinates to local coordinates, which means that when they learn walking in local coordinates they can easily generalize if the input coordinates are shifted. The problem with the second approach is that the conversion should take considerable neural net resources and it will probably make it less fit in the short run, which means it will die and not progress to the next generation. This all means that the creature is stuck in local minima, it cannot go to local coordinates because the evolutionary barrier is to high. This is why we decided to try and in the end use local coordinates. To preserve the neural nets ability to use absolute we added absolute coordinates of the first point. So the input to the neural network are coordinates of the points in the reference frame of the first point and coordinates of the first point in global coordinate frame.
+
+            \item \textbf{Neural net predicts muscle offsets}
+
+            Using the reasoning similar to the one that got us to relative coordinates we changed the output of the network to predict global offsets of the default muscle lengths. If the neural network predicts the offsets relative to the previous frame that would mean that if the neural network changes something in the beginning of the trajectory that that would influence greatly output later in the trajectory. Making neural network predict offsets from the default muscle lengths makes the problem easier to learn and problem parts more independent.
+            
+        \end{itemize}
+
+    \hfill
+
+\subsubsection{\textbf{\large Genetic algorithm}}
+    While there are many different genetic algorithms to choose from, we decided to use the simplest. We select top p percent of creatures to duplicate and bottom b percent to murder. In our experiments we used p=30 and b=50. To give diversity we tried mutating them all, but that did not work well. We found creatures learned more and faster if we kept top k percent of creatures unchanged, we used k=10. The mutation is done by adding a gaussian noise with mean at 0 to the creature's parameters. We fount the exact standard deviation parameter fairly robust and used 1 in our experiments.
+    
+    
+    
+    

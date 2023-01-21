@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="..">
+      <UniqueIdentifier>{61705900-4DFC-870B-B6AA-880BA255880B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\GeneticAlgorithm-ConsoleApp">
+      <UniqueIdentifier>{D7002C45-C326-F6AB-AC6C-7B7798311B78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tigraf-Engine">
+      <UniqueIdentifier>{B0A74D31-9CA0-6C83-C5D2-5108B12A4C8F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tigraf-Engine\vendor">
+      <UniqueIdentifier>{0DB861B4-79EF-A94B-82F9-0D6FEEAFD044}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tigraf-Engine\vendor\glad">
+      <UniqueIdentifier>{349B14F0-2056-049C-C90D-7DE6B5A74E2C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Tigraf-Engine\vendor\glfw">
+      <UniqueIdentifier>{EC9B14F0-D856-049C-810E-7DE66DA84E2C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\GeneticAlgorithm-ConsoleApp\premake5.lua">
+      <Filter>..\GeneticAlgorithm-ConsoleApp</Filter>
+    </None>
+    <None Include="..\..\Tigraf-Engine\premake5.lua">
+      <Filter>..\Tigraf-Engine</Filter>
+    </None>
+    <None Include="..\..\Tigraf-Engine\vendor\glad\premake5.lua">
+      <Filter>..\Tigraf-Engine\vendor\glad</Filter>
+    </None>
+    <None Include="..\..\Tigraf-Engine\vendor\glfw\premake5.lua">
+      <Filter>..\Tigraf-Engine\vendor\glfw</Filter>
+    </None>
+    <None Include="..\..\premake5.lua">
+      <Filter>..</Filter>
+    </None>
+    <None Include="premake5.lua" />
+  </ItemGroup>
+</Project>

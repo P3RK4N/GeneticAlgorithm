@@ -1,0 +1,128 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage[a4paper, total={184mm,239mm}]{geometry}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{url}
+\usepackage{fancyvrb}
+
+\lstdefinestyle{Scalastyle}{
+    language=scala,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,https://www.overleaf.com/project/63bd7510cad851deec6a46dc
+    breakatwhitespace=true,
+    tabsize=2,
+    numbers=left,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=1.5em,
+    captionpos=b
+}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{Cstyle}{
+    language=C,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{mGreen},
+    stringstyle=\color{mPurple},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=2,
+    numbers=left,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=1.5em,
+    captionpos=b
+}
+
+\begin{document}
+
+\title{Parallelization of genetic algorithm}
+
+\author{
+    \IEEEauthorblockN{Bruno Perković}
+    \IEEEauthorblockA{
+        \textit{University of Zagreb, FER} \\
+        \textit{Zagreb, Croatia}\\
+        bruno.perkovic@fer.hr
+    }
+    \and
+    \IEEEauthorblockN{Darijan Gudelj}
+    \IEEEauthorblockA{
+    \textit{University of Zagreb, FER} \\
+        \textit{Zagreb, Croatia}\\
+        darijan.gudelj@fer.hr
+    }
+}
+
+
+\maketitle
+
+\begin{abstract}
+     This paper describes a method for training a neural network to control the movement of a character in a walking simulation using GLSL and an evolutionary algorithm for a realistic and efficient motion.
+\end{abstract}
+
+\begin{IEEEkeywords}
+    GLSL, OpenGL, genetic algorithm, neural network, physics simulation, Pytorch
+\end{IEEEkeywords}
+
+%We want to lower costs with energy efficiency as well
+\section{\huge Introduction}
+    \input{introduction.tex}
+    
+\section{\huge Background}
+    \input{pytorch_background}
+    \input{glsl_Background}
+
+\section{\huge Main}
+     \input{pytorch_main.tex}
+    \input{glsl_Main.tex}
+
+\section{\huge Evaluation}
+
+\input{glsl_Evaluation.tex}
+
+%\section{\huge Results}
+
+%\input{glsl_results.tex}
+
+\section{\huge Conclusion}
+
+\input{glsl_Conclusion.tex}
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{25625077-9122-CCAD-5A5D-152BC6DC108A}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Tigraf-Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\bin\Debug-windows-x86_64\Tigraf-Engine\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\Tigraf-Engine\</IntDir>
+    <TargetName>Tigraf-Engine</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\bin\Release-windows-x86_64\Tigraf-Engine\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\Tigraf-Engine\</IntDir>
+    <TargetName>Tigraf-Engine</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <OutDir>..\bin\Dist-windows-x86_64\Tigraf-Engine\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86_64\Tigraf-Engine\</IntDir>
+    <TargetName>Tigraf-Engine</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>TIGRAF_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\glfw\include;vendor\glad\include;vendor\glm;vendor\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>TIGRAF_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\glfw\include;vendor\glad\include;vendor\glm;vendor\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>TIGRAF_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\glfw\include;vendor\glad\include;vendor\glm;vendor\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\PCH.h" />
+    <ClInclude Include="src\Tigraf.h" />
+    <ClInclude Include="src\Tigraf\Core\Application.h" />
+    <ClInclude Include="src\Tigraf\Core\Assert.h" />
+    <ClInclude Include="src\Tigraf\Core\Core.h" />
+    <ClInclude Include="src\Tigraf\Core\EntryPoint.h" />
+    <ClInclude Include="src\Tigraf\Core\Layer.h" />
+    <ClInclude Include="src\Tigraf\Core\Log.h" />
+    <ClInclude Include="src\Tigraf\Core\PlatformDetection.h" />
+    <ClInclude Include="src\Tigraf\Core\Timer.h" />
+    <ClInclude Include="src\Tigraf\Event\Event.h" />
+    <ClInclude Include="src\Tigraf\GUI\Frame.h" />
+    <ClInclude Include="src\Tigraf\GUI\GUI_Element.h" />
+    <ClInclude Include="src\Tigraf\GUI\Panel.h" />
+    <ClInclude Include="src\Tigraf\Input\Input.h" />
+    <ClInclude Include="src\Tigraf\Input\Keycodes.h" />
+    <ClInclude Include="src\Tigraf\Input\glfwInput.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Buffers\Buffer.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Buffers\OpenGLBuffer.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Buffers\RWBufferDefines.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Buffers\UniformBufferDefines.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Camera\Camera.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Camera\EditorCamera.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Framebuffers\Framebuffer.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Framebuffers\OpenGLFramebuffer.h" />
+    <ClInclude Include="src\Tigraf\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Mesh\Mesh.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Mesh\MeshPrimitives.h" />
+    <ClInclude Include="src\Tigraf\Renderer\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Renderer.h" />
+    <ClInclude Include="src\Tigraf\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Shaders\ComputeShader.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Shaders\Shader.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Shaders\glslComputeShader.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Shaders\glslShader.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Textures\OpenGLTexture.h" />
+    <ClInclude Include="src\Tigraf\Renderer\Textures\Texture.h" />
+    <ClInclude Include="src\Tigraf\Window\Window.h" />
+    <ClInclude Include="src\Tigraf\Window\glfwWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\PCH.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Core\Application.cpp" />
+    <ClCompile Include="src\Tigraf\Core\Log.cpp" />
+    <ClCompile Include="src\Tigraf\GUI\Frame.cpp" />
+    <ClCompile Include="src\Tigraf\GUI\GUI_Element.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Buffers\Buffer.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Buffers\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Camera\Camera.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Camera\EditorCamera.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Framebuffers\Framebuffer.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Framebuffers\OpenGLFramebuffer.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Mesh\Mesh.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Mesh\MeshPrimitives.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Shaders\ComputeShader.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Shaders\Shader.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Shaders\glslComputeShader.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Shaders\glslShader.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Textures\OpenGLTexture.cpp" />
+    <ClCompile Include="src\Tigraf\Renderer\Textures\Texture.cpp" />
+    <ClCompile Include="src\Tigraf\Window\Window.cpp" />
+    <ClCompile Include="src\Tigraf\Window\glfwWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="vendor\glfw\glfw.vcxproj">
+      <Project>{9563977C-819A-980D-2A87-7E10169D140F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

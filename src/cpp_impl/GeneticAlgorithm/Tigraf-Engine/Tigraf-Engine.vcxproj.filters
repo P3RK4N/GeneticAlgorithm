@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Tigraf">
+      <UniqueIdentifier>{62D376D3-4E75-A1A9-3730-B5FD237128FA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Core">
+      <UniqueIdentifier>{FA64C585-661A-3E7B-EF0E-38525BC3347F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Event">
+      <UniqueIdentifier>{33D6993E-1F39-29E3-C8BE-6199B400F565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\GUI">
+      <UniqueIdentifier>{76B3B08F-626B-F2DC-CB72-CB38B7498DCD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Input">
+      <UniqueIdentifier>{E104DE3E-CD67-6DE3-76ED-A599622F3966}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Renderer">
+      <UniqueIdentifier>{48056BD0-B490-D894-BDA1-5B8929AC3495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Renderer\Buffers">
+      <UniqueIdentifier>{C48C948D-30C4-DC24-39CE-4048A584031E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Renderer\Camera">
+      <UniqueIdentifier>{C0D80A4B-ACD2-339D-953F-CAAD81D89909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Renderer\Framebuffers">
+      <UniqueIdentifier>{6FB2DE10-5B6D-CEBC-0425-4707F0BE184D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Renderer\Mesh">
+      <UniqueIdentifier>{04088820-F096-11EA-99B5-25E585232290}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Renderer\Shaders">
+      <UniqueIdentifier>{21F2838B-8D29-CC22-9633-304602EAF21B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Renderer\Textures">
+      <UniqueIdentifier>{1B482638-076D-75B8-30B8-5A481C3C74D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tigraf\Window">
+      <UniqueIdentifier>{09FEEA3A-75BE-6671-3EF9-AFEEAA78AB4D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\PCH.h" />
+    <ClInclude Include="src\Tigraf.h" />
+    <ClInclude Include="src\Tigraf\Core\Application.h">
+      <Filter>Tigraf\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Core\Assert.h">
+      <Filter>Tigraf\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Core\Core.h">
+      <Filter>Tigraf\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Core\EntryPoint.h">
+      <Filter>Tigraf\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Core\Layer.h">
+      <Filter>Tigraf\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Core\Log.h">
+      <Filter>Tigraf\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Core\PlatformDetection.h">
+      <Filter>Tigraf\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Core\Timer.h">
+      <Filter>Tigraf\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Event\Event.h">
+      <Filter>Tigraf\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\GUI\Frame.h">
+      <Filter>Tigraf\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\GUI\GUI_Element.h">
+      <Filter>Tigraf\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\GUI\Panel.h">
+      <Filter>Tigraf\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Input\Input.h">
+      <Filter>Tigraf\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Input\Keycodes.h">
+      <Filter>Tigraf\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Input\glfwInput.h">
+      <Filter>Tigraf\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Buffers\Buffer.h">
+      <Filter>Tigraf\Renderer\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Buffers\OpenGLBuffer.h">
+      <Filter>Tigraf\Renderer\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Buffers\RWBufferDefines.h">
+      <Filter>Tigraf\Renderer\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Buffers\UniformBufferDefines.h">
+      <Filter>Tigraf\Renderer\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Camera\Camera.h">
+      <Filter>Tigraf\Renderer\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Camera\EditorCamera.h">
+      <Filter>Tigraf\Renderer\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Framebuffers\Framebuffer.h">
+      <Filter>Tigraf\Renderer\Framebuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Framebuffers\OpenGLFramebuffer.h">
+      <Filter>Tigraf\Renderer\Framebuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\GraphicsContext.h">
+      <Filter>Tigraf\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Mesh\Mesh.h">
+      <Filter>Tigraf\Renderer\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Mesh\MeshPrimitives.h">
+      <Filter>Tigraf\Renderer\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\OpenGLRendererAPI.h">
+      <Filter>Tigraf\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Renderer.h">
+      <Filter>Tigraf\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\RendererAPI.h">
+      <Filter>Tigraf\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Shaders\ComputeShader.h">
+      <Filter>Tigraf\Renderer\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Shaders\Shader.h">
+      <Filter>Tigraf\Renderer\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Shaders\glslComputeShader.h">
+      <Filter>Tigraf\Renderer\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Shaders\glslShader.h">
+      <Filter>Tigraf\Renderer\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Textures\OpenGLTexture.h">
+      <Filter>Tigraf\Renderer\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Renderer\Textures\Texture.h">
+      <Filter>Tigraf\Renderer\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Window\Window.h">
+      <Filter>Tigraf\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tigraf\Window\glfwWindow.h">
+      <Filter>Tigraf\Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\PCH.cpp" />
+    <ClCompile Include="src\Tigraf\Core\Application.cpp">
+      <Filter>Tigraf\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Core\Log.cpp">
+      <Filter>Tigraf\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\GUI\Frame.cpp">
+      <Filter>Tigraf\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\GUI\GUI_Element.cpp">
+      <Filter>Tigraf\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Buffers\Buffer.cpp">
+      <Filter>Tigraf\Renderer\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Buffers\OpenGLBuffer.cpp">
+      <Filter>Tigraf\Renderer\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Camera\Camera.cpp">
+      <Filter>Tigraf\Renderer\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Camera\EditorCamera.cpp">
+      <Filter>Tigraf\Renderer\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Framebuffers\Framebuffer.cpp">
+      <Filter>Tigraf\Renderer\Framebuffers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Framebuffers\OpenGLFramebuffer.cpp">
+      <Filter>Tigraf\Renderer\Framebuffers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Mesh\Mesh.cpp">
+      <Filter>Tigraf\Renderer\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Mesh\MeshPrimitives.cpp">
+      <Filter>Tigraf\Renderer\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\OpenGLRendererAPI.cpp">
+      <Filter>Tigraf\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Renderer.cpp">
+      <Filter>Tigraf\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Shaders\ComputeShader.cpp">
+      <Filter>Tigraf\Renderer\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Shaders\Shader.cpp">
+      <Filter>Tigraf\Renderer\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Shaders\glslComputeShader.cpp">
+      <Filter>Tigraf\Renderer\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Shaders\glslShader.cpp">
+      <Filter>Tigraf\Renderer\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Textures\OpenGLTexture.cpp">
+      <Filter>Tigraf\Renderer\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Renderer\Textures\Texture.cpp">
+      <Filter>Tigraf\Renderer\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Window\Window.cpp">
+      <Filter>Tigraf\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tigraf\Window\glfwWindow.cpp">
+      <Filter>Tigraf\Window</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
