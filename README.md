@@ -1,9 +1,3 @@
-# PiK 22
-Parallelsim and Concurrency course at UniZg (FER): 2022/23
-
-https://www.fer.unizg.hr/predmet/pik
-
-
 ## examples
 This is a visualization of generations of creatures.
 As time progresses they become better and better at going
