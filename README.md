@@ -2,7 +2,7 @@
 
 Program in which user-built shapes learn how to walk using neural network brains while also evolving trough genetic algorithm.
 First implementation is in python with pytorch, not in real time. 
-Second one is in C++ using OpenGL with maximally optimized compute shaders, in real time.
+Second one is in C++ using OpenGL with compute shaders, in real time.
 
 Performance: 
   - 4.000.000 shapes drawn at 60FPS
